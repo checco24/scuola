@@ -22,9 +22,11 @@ public class MainActivity extends AppCompatActivity {
     public void Cancella(View view){
         editText.setText("");
     }
+
     public void nuova(View view ){
-        Intent intent = new Intent(this,ciao.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(getApplicationContext(),ciao.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("EXTRA_TEXT",String.valueOf(editText.getText()));
         this.startActivity(intent);
 
     }
